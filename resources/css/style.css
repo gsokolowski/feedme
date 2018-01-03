@@ -185,6 +185,7 @@ header {
     height: 100vh; /* set height to 100% of view port */
     background-size: cover; /* when image is to zoomed in use this to make it smaller*/
     background-position: center; /* you need to also center the image */
+    background-attachment: fixed; /* make image sticky - stays in the same place all the time while you scroll up or down*/
 }
 
 .hero-text-box {
@@ -345,4 +346,92 @@ header {
     height: 50px;
     width: auto;
     margin-right: 10px;
+}
+
+
+
+/* ----------------------------------------- */
+/* Cities  */
+/* ----------------------------------------- */
+
+
+.box img {
+    width: 100%; /*image as wide as the boc so 100% */
+    height: auto;
+    overflow: hidden; /* when you scale images they are overflow do hide overflow of the image bellow */
+    background-color: #000; /* add background black to make all images darker when opacity works*/
+    margin-bottom: 15px;
+}
+
+.icon-small {
+    display: inline-block; /* add this to be able to add width to the DOM box */
+    width: 30px; /* now is wider so you can center icon inside the DOM box */
+    text-align: center;
+    color: #e67e22; /* make icon orange */
+    font-size: 120%;
+
+    /* 3 steps to align icons with text */
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top: -5px; /* pull icon a bit to the top */
+}
+
+a:link,
+a:visited {
+    color: #e67e22;
+    text-decoration: none; /* no underline under email */
+    padding-bottom: 1px;
+    border-bottom: 1px solid #e67e22; /* bottom underline */
+    transition: border-bottom 0.2s, color 0.2s; /* transition from border-bottom solid to and color #e67e22 to transparent and color #555*/
+}
+
+a:hover,
+a:active {
+    color: #555;
+    border-bottom: 1px solid transparent; /* bottom underline */
+}
+
+
+
+/* ----------------------------------------- */
+/* Testimonials  */
+/* ----------------------------------------- */
+
+
+.section-testimonials {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(img/back-customers.jpg);
+    background-size: cover; /* make this image to fill whole section cover the whole section */
+    color: #fff;
+    background-attachment: fixed; /* make image sticky - stays in the same place all the time while you scroll up or down*/
+}
+
+blockquote {
+    padding: 2%;
+    font-style: italic;
+    line-height: 145%;
+    position: relative;
+    margin-top: 40px;
+}
+
+blockquote:before {
+    /* content alowes to add text throug css. */
+    content: "\201C"; /*  Here I add double quote and you put this as absolute positioning  so blockquote needs to be position relative */
+    font-size: 500%;
+    display: block;
+    position: absolute; /* when you make element with absolute position you need to make sure that it' parent is position: relative */
+    top: -5px; /* when you have absolute then you can use top and left */
+    left: -5px;
+}
+
+cite {
+    font-size: 90%;
+    margin-top: 25px;
+    display: block; /* to have image and name in new line just use block and both will move because image is under cite*/
+}
+
+cite img {
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
 }
